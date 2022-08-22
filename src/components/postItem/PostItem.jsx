@@ -23,4 +23,4 @@ const PostItem = ({post, deletePost}) => {
     )
 };
 
-export default PostItem
+export default PostItem;
