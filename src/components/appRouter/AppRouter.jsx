@@ -3,22 +3,27 @@ import NotFound404 from '../../components/UI/404/NotFound404';
 import { publicRoutes, priveteRoutes } from '../../router';
 import { useContext } from 'react';
 import { AuthContext } from '../../context';
+import Loader from '../UI/loader/Loader';
 
 
 const AppRouter = () => {
 
-    const {isAuth, setIsAuth} = useContext(AuthContext);
+    const {isAuth, isLoading} = useContext(AuthContext);
+
+    if (isLoading) {
+        return <Loader />
+    }
 
     return (
         <Routes>
             {
                 isAuth ?
                 priveteRoutes.map(route => 
-                <Route key={route.path} path={route.path} element={route.component} />    
+                <Route key={route.path} path={route.path} element={<route.component/>} />    
                 )
                 :
                 publicRoutes.map(route => 
-                <Route key={route.path} path={route.path} element={route.component} />    
+                <Route key={route.path} path={route.path} element={<route.component/>} />    
                 )
             }
             {

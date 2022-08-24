@@ -4,11 +4,11 @@ import PostIdPage from "../pages/PostIdPage";
 import Login from "../pages/Login";
 
 export const priveteRoutes = [
-    {path: '/about', component: <About />,},
-    {path: '/posts', component: <Posts />},
-    {path: '/posts/:id', component: <PostIdPage />},
+    {path: '/about', component: About,},
+    {path: '/posts', component: Posts},
+    {path: '/posts/:id', component: PostIdPage},
 ];
 
 export const publicRoutes = [
-    {path: '/login', component: <Login />,},
+    {path: '/login', component: Login},
 ];
